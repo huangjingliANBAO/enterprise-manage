@@ -8,6 +8,8 @@ public class StaffVO {
     private String departmentId;
     private String staffWork;
     private String staffAvatar;
+    private String staffPhone;
+    private String staffAddress;
     private Date staffDate;
     private String departmentName;
 
@@ -51,6 +53,22 @@ public class StaffVO {
         this.staffAvatar = staffAvatar;
     }
 
+    public String getStaffPhone() {
+        return staffPhone;
+    }
+
+    public void setStaffPhone(String staffPhone) {
+        this.staffPhone = staffPhone;
+    }
+
+    public String getStaffAddress() {
+        return staffAddress;
+    }
+
+    public void setStaffAddress(String staffAddress) {
+        this.staffAddress = staffAddress;
+    }
+
     public Date getStaffDate() {
         return staffDate;
     }
@@ -75,6 +93,8 @@ public class StaffVO {
                 ", departmentId='" + departmentId + '\'' +
                 ", staffWork='" + staffWork + '\'' +
                 ", staffAvatar='" + staffAvatar + '\'' +
+                ", staffPhone='" + staffPhone + '\'' +
+                ", staffAddress='" + staffAddress + '\'' +
                 ", staffDate=" + staffDate +
                 ", departmentName='" + departmentName + '\'' +
                 '}';

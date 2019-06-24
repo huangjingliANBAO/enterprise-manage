@@ -11,10 +11,10 @@ import java.util.List;
 public class SalaryServiceImpl implements SalaryService {
     private SalaryDAO salaryDAO = DAOFactory.getSalaryInstance();
     @Override
-    public List<SalaryVO> insertAll() {
+    public List<SalaryVO> selectAll() {
         List<SalaryVO> salaryVOList = null;
         try {
-            salaryVOList = salaryDAO.insertAll();
+            salaryVOList = salaryDAO.selectAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }

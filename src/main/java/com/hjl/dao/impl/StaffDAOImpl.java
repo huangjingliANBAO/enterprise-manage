@@ -29,14 +29,13 @@ public class StaffDAOImpl implements StaffDAO {
     public int insertStaff(Staff staff) throws SQLException {
       JDBCUtil jdbcUtil = JDBCUtil.getInitJDBCUtil();
       Connection connection = jdbcUtil.getConnection();
-      String sql = "INSERT INTO  t_staff VALUE (?,?,?,?,?,?)";
+      String sql = "INSERT INTO  t_staff(staff_id,department_id,staff_work,staff_avatar,staff_date) VALUE (?,?,?,?,?)";
       PreparedStatement pstmt = connection.prepareStatement(sql);
-      pstmt.setInt(1,staff.getId());
-      pstmt.setString(2,staff.getStaffId());
-      pstmt.setInt(3,staff.getDepartmentId());
-      pstmt.setString(4,staff.getStaffWork());
-      pstmt.setString(5,staff.getStaffAvatar());
-      pstmt.setDate(6, new Date(staff.getStaffDate().getTime()));
+      pstmt.setString(1,staff.getStaffId());
+      pstmt.setString(2,staff.getDepartmentId());
+      pstmt.setString(3,staff.getStaffWork());
+      pstmt.setString(4,staff.getStaffAvatar());
+      pstmt.setDate(5, new Date(staff.getStaffDate().getTime()));
       int n = pstmt.executeUpdate();
       pstmt.close();
       connection.close();
@@ -58,9 +57,9 @@ public class StaffDAOImpl implements StaffDAO {
     public int updateStaff(Staff staff) throws SQLException {
        JDBCUtil jdbcUtil = JDBCUtil.getInitJDBCUtil();
        Connection connection = jdbcUtil.getConnection();
-       String sql = "UPDATE  t_staff SET  staff_work = ? WHERE staff_id = ?";
+       String sql = "UPDATE  t_staff SET  staff_address = ? WHERE staff_id = ?";
        PreparedStatement pstmt = connection.prepareStatement(sql);
-       pstmt.setString(1,staff.getStaffWork());
+       pstmt.setString(1,staff.getStaffAddress());
        pstmt.setString(2,staff.getStaffId());
        int n = pstmt.executeUpdate();
        pstmt.close();
@@ -71,12 +70,13 @@ public class StaffDAOImpl implements StaffDAO {
         List<StaffVO> staffVOList = new ArrayList<>();
         while (rs.next()) {
             StaffVO staff = new StaffVO();
-            staff.setId(rs.getInt("id"));
             staff.setStaffId(rs.getString("staff_id"));
             staff.setDepartmentId(rs.getString("department_id"));
             staff.setStaffWork(rs.getString("staff_work"));
             staff.setStaffAvatar(rs.getString("staff_avatar"));
             staff.setDepartmentName(rs.getString("department_name"));
+            staff.setStaffPhone(rs.getString("staff_phone"));
+            staff.setStaffAddress(rs.getString("staff_address"));
             staff.setStaffDate(rs.getDate("staff_date"));
             /**
              * 数据库数据添加到staffVOList集合

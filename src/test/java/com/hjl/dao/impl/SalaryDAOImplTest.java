@@ -16,7 +16,7 @@ private SalaryDAO salaryDAO = DAOFactory.getSalaryInstance();
     public void insertAll() {
         List<SalaryVO> salaryVOList = null;
         try {
-            salaryVOList = salaryDAO.insertAll();
+            salaryVOList = salaryDAO.selectAll();
         } catch (SQLException e) {
             e.printStackTrace();
         }

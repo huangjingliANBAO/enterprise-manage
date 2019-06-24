@@ -19,4 +19,7 @@ public class ServiceFactory {
   public static AttendanceService getAttendanceInstance(){
         return new AttendanceServiceImpl();
   }
+  public static PersonnelService getPersonnelInstance(){
+        return new PersonnelServiceImpl();
+  }
 }

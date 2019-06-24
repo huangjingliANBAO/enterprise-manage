@@ -14,7 +14,7 @@ import java.util.List;
 
 public class SalaryDAOImpl implements SalaryDAO {
     @Override
-    public List<SalaryVO> insertAll() throws SQLException {
+    public List<SalaryVO> selectAll() throws SQLException {
         JDBCUtil jdbcUtil = JDBCUtil.getInitJDBCUtil();
         Connection connection = jdbcUtil.getConnection();
         String sql = "SELECT t1.*,t2.staff_id\n" +

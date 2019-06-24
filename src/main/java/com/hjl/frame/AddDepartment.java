@@ -12,7 +12,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
-import java.sql.Connection;
 
 public class AddDepartment extends JFrame {
     private ImgPanel rootPanel;
@@ -21,9 +20,9 @@ public class AddDepartment extends JFrame {
     private JLabel logoLabel;
     private JLabel closeLabel;
     private File file;
-    private MainFrame mainFrame;
+    private AdminFrame mainFrame;
 
-    public AddDepartment(MainFrame mainFrame){
+    public AddDepartment(AdminFrame mainFrame){
         this.mainFrame = mainFrame;
         setUndecorated(true);
         setSize(400,400);
@@ -49,7 +48,7 @@ public class AddDepartment extends JFrame {
                 if (result == JFileChooser.APPROVE_OPTION){
                     file = fileChooser.getSelectedFile();
                     ImageIcon icon = new ImageIcon(file.getAbsolutePath());
-                    icon.setImage(icon.getImage().getScaledInstance(165,165, Image.SCALE_DEFAULT));
+                    icon.setImage(icon.getImage().getScaledInstance(50,50, Image.SCALE_DEFAULT));
                     logoLabel.setText("");
                     logoLabel.setIcon(icon);
                 }

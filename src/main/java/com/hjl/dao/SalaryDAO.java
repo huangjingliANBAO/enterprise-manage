@@ -11,5 +11,5 @@ public interface SalaryDAO {
      * @return  List
      * @throws SQLException
      */
-    List<SalaryVO> insertAll()throws SQLException;
+    List<SalaryVO> selectAll()throws SQLException;
 }

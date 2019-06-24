@@ -27,9 +27,8 @@ public class StaffDAOImplTest {
     @Test
     public void insertStaff() throws SQLException{
         Staff staff = new Staff();
-        staff.setId(4);
         staff.setStaffId("GG114");
-        staff.setDepartmentId(1);
+        staff.setDepartmentId("1");
         staff.setStaffAvatar("https://huangjingli.oss-cn-beijing.aliyuncs.com/logo/%E8%A9%B9%E5%A7%86%E6%96%AF.jpg");
         staff.setStaffWork("UI美工");
         staff.setStaffDate(new Date());
@@ -38,14 +37,15 @@ public class StaffDAOImplTest {
     }
     @Test
     public void deleteStaff()throws SQLException {
-        int n = staffDAO.deleteStaff(9);
+        int id = 1;
+        int n = staffDAO.deleteStaff(id);
     }
 
     @Test
     public void updateStaff()throws SQLException {
         Staff staff = new Staff();
         staff.setStaffId("GG111");
-        staff.setStaffWork("后端开发");
+        staff.setStaffAddress("西安");
 
         int n = staffDAO.updateStaff(staff);
     }

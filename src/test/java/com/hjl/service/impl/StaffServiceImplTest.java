@@ -24,7 +24,7 @@ public class StaffServiceImplTest {
     public void insertStaff() {
         Staff staff = new Staff();
         staff.setStaffId("测试测试");
-        staff.setDepartmentId(1);
+        staff.setDepartmentId("1");
         staff.setStaffWork("UI美工");
         staff.setStaffAvatar("https://huangjingli.oss-cn-beijing.aliyuncs.com/logo/%E8%A9%B9%E5%A7%86%E6%96%AF.jpg");
         staff.setStaffDate(new Date());
@@ -34,14 +34,14 @@ public class StaffServiceImplTest {
     @Test
     public void updateStaff() {
         Staff staff = new Staff();
-        staff.setStaffId("GG124");
-        staff.setStaffWork("发发发");
+        staff.setStaffId("GG111");
+        staff.setStaffAddress("成都");
         staffService.updateStaff(staff);
     }
 
     @Test
     public void deleteId() {
-       int id = 1;
+       int id = 2;
        staffService.deleteId(id);
     }
 }

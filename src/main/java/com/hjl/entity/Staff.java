@@ -5,9 +5,11 @@ import java.util.Date;
 public class Staff {
     private Integer id;
     private String staffId;
-    private Integer departmentId;
+    private String departmentId;
     private String staffWork;
     private String staffAvatar;
+    private String staffPhone;
+    private String staffAddress;
     private Date staffDate;
 
     public Integer getId() {
@@ -26,11 +28,11 @@ public class Staff {
         this.staffId = staffId;
     }
 
-    public Integer getDepartmentId() {
+    public String getDepartmentId() {
         return departmentId;
     }
 
-    public void setDepartmentId(Integer departmentId) {
+    public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
     }
 
@@ -50,6 +52,22 @@ public class Staff {
         this.staffAvatar = staffAvatar;
     }
 
+    public String getStaffPhone() {
+        return staffPhone;
+    }
+
+    public void setStaffPhone(String staffPhone) {
+        this.staffPhone = staffPhone;
+    }
+
+    public String getStaffAddress() {
+        return staffAddress;
+    }
+
+    public void setStaffAddress(String staffAddress) {
+        this.staffAddress = staffAddress;
+    }
+
     public Date getStaffDate() {
         return staffDate;
     }
@@ -63,9 +81,11 @@ public class Staff {
         return "Staff{" +
                 "id=" + id +
                 ", staffId='" + staffId + '\'' +
-                ", departmentId=" + departmentId +
+                ", departmentId='" + departmentId + '\'' +
                 ", staffWork='" + staffWork + '\'' +
                 ", staffAvatar='" + staffAvatar + '\'' +
+                ", staffPhone='" + staffPhone + '\'' +
+                ", staffAddress='" + staffAddress + '\'' +
                 ", staffDate=" + staffDate +
                 '}';
     }

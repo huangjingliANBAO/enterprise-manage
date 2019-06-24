@@ -22,5 +22,8 @@ public class DAOFactory {
     public static ClientDAO getClientInstance(){
         return new ClientDAOImpl();
     }
+    public static PersonnelDAO getPersonnelInstance(){
+        return new PersonnelDAOImpl();
+    }
 
 }
